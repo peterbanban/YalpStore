@@ -34,6 +34,7 @@ public class App implements Comparable<App> {
     private boolean isInstalled;
     private boolean isFree;
     private List<String> screenshotUrls = new ArrayList<>();
+    private String backgroundImage;
     private Review userReview;
     private String categoryId;
     private String price;
@@ -318,6 +319,13 @@ public class App implements Comparable<App> {
         this.restriction = restriction;
     }
 
+    public String getBackgroundImage(){
+        return backgroundImage;
+    }
+
+    public void setBackgroundImage(String imageUrl){
+        this.backgroundImage = imageUrl;
+    }
     @Override
     public int compareTo(App o) {
         return getDisplayName().compareToIgnoreCase(o.getDisplayName());

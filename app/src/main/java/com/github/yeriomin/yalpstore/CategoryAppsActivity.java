@@ -6,6 +6,8 @@ import android.util.Log;
 
 import com.github.yeriomin.yalpstore.fragment.FilterMenu;
 import com.github.yeriomin.yalpstore.task.playstore.CategoryAppsTask;
+import com.github.yeriomin.yalpstore.task.playstore.DetailTask;
+import com.github.yeriomin.yalpstore.task.playstore.DetailsTask;
 import com.github.yeriomin.yalpstore.task.playstore.EndlessScrollTask;
 
 public class CategoryAppsActivity extends EndlessScrollActivity {
@@ -44,5 +46,10 @@ public class CategoryAppsActivity extends EndlessScrollActivity {
         task.setCategoryId(categoryId);
         task.setFilter(new FilterMenu(this).getFilterPreferences());
         return task;
+    }
+
+    @Override
+    protected DetailTask getDetailTask() {
+        return null;
     }
 }

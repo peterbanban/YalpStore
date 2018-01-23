@@ -17,7 +17,7 @@
             android:indeterminate="true"
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
-            android:visibility="gone"
+            android:visibility="visible"
             android:padding="5dp" />
 
         <ScrollView
@@ -30,44 +30,53 @@
                 android:layout_height="wrap_content">
 
                 <LinearLayout
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:gravity="center_vertical">
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content">
+                    <ImageView
+                      android:id="@+id/background_image"
+                      android:layout_width="match_parent"
+                      android:layout_height="59dp"/>
+                </LinearLayout>
+
+                <LinearLayout
+                  android:layout_width="fill_parent"
+                  android:layout_height="wrap_content"
+                  android:gravity="center_vertical">
 
                     <ImageView
-                        android:id="@+id/icon"
-                        android:contentDescription="@string/content_description_app_icon"
-                        android:src="@drawable/ic_placeholder"
-                        android:layout_width="64dip"
-                        android:layout_height="64dip"
-                        android:layout_marginRight="6dip"
-                        android:layout_marginEnd="6dip"
-                        android:layout_gravity="top" />
+                      android:id="@+id/icon"
+                      android:layout_width="64dip"
+                      android:layout_height="64dip"
+                      android:layout_marginEnd="6dip"
+                      android:layout_marginRight="6dip"
+                      android:layout_gravity="top"
+                      android:contentDescription="@string/content_description_app_icon"
+                      android:src="@drawable/ic_placeholder"/>
 
                     <LinearLayout
-                        android:orientation="vertical"
-                        android:layout_gravity="center_vertical"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
+                      android:layout_width="wrap_content"
+                      android:layout_height="wrap_content"
+                      android:layout_gravity="center_vertical"
+                      android:orientation="vertical">
 
                         <TextView
-                            android:id="@+id/displayName"
-                            android:textSize="18sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content"
-                            android:textStyle="bold" />
+                          android:id="@+id/displayName"
+                          android:textStyle="bold"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:textSize="18sp"/>
 
                         <TextView
-                            android:id="@+id/packageName"
-                            android:textSize="14sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                          android:id="@+id/packageName"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:textSize="14sp"/>
 
                         <TextView
-                            android:id="@+id/versionString"
-                            android:textSize="14sp"
-                            android:layout_width="match_parent"
-                            android:layout_height="wrap_content" />
+                          android:id="@+id/versionString"
+                          android:layout_width="match_parent"
+                          android:layout_height="wrap_content"
+                          android:textSize="14sp"/>
 
                     </LinearLayout>
 
@@ -75,7 +84,7 @@
 
                 <LinearLayout
                     android:id="@+id/general_details"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:orientation="vertical"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content">
@@ -163,7 +172,7 @@
                 <TextView
                     android:id="@+id/changes_header"
                     android:focusable="true"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:drawableLeft="@drawable/ic_expand_more"
                     android:drawableStart="@drawable/ic_expand_more"
                     android:textSize="20sp"
@@ -175,7 +184,7 @@
 
                 <LinearLayout
                     android:id="@+id/changes_container"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -183,7 +192,7 @@
                     <TextView
                         android:id="@+id/changes_upper"
                         android:textIsSelectable="true"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:autoLink="web|email"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -194,7 +203,7 @@
                 <TextView
                     android:id="@+id/description_header"
                     android:focusable="true"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:drawableLeft="@drawable/ic_expand_more"
                     android:drawableStart="@drawable/ic_expand_more"
                     android:textSize="20sp"
@@ -206,7 +215,7 @@
 
                 <LinearLayout
                     android:id="@+id/description_container"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -222,7 +231,7 @@
                     <TextView
                         android:id="@+id/changes_title"
                         android:text="@string/details_changelog"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:paddingTop="10dip"  />
@@ -231,7 +240,7 @@
                         android:id="@+id/changes"
                         android:textIsSelectable="true"
                         android:autoLink="web|email"
-                        android:visibility="gone"
+                        android:visibility="visible"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content" />
 
@@ -247,7 +256,7 @@
                 <TextView
                     android:id="@+id/reviews_header"
                     android:focusable="true"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:drawableLeft="@drawable/ic_expand_more"
                     android:drawableStart="@drawable/ic_expand_more"
                     android:textSize="20sp"
@@ -261,7 +270,7 @@
                     android:id="@+id/reviews_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:orientation="vertical" >
 
                     <FrameLayout
@@ -273,7 +282,7 @@
 
                         <LinearLayout
                             android:id="@+id/user_review_edit_delete"
-                            android:visibility="gone"
+                            android:visibility="visible"
                             android:orientation="vertical"
                             android:layout_gravity="end"
                             android:layout_width="wrap_content"
@@ -325,7 +334,7 @@
 
                             <LinearLayout
                                 android:id="@+id/user_review"
-                                android:visibility="gone"
+                                android:visibility="visible"
                                 android:orientation="vertical"
                                 android:layout_gravity="center"
                                 android:layout_width="wrap_content"
@@ -452,12 +461,12 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="6dip"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
 
                 <TextView
                     android:id="@+id/screenshots_header"
                     android:focusable="true"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:drawableLeft="@drawable/ic_expand_more"
                     android:drawableStart="@drawable/ic_expand_more"
                     android:textSize="20sp"
@@ -471,7 +480,7 @@
                     android:id="@+id/screenshots_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:orientation="vertical">
 
                     <Gallery
@@ -498,7 +507,7 @@
                     android:id="@+id/permissions_container"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:orientation="vertical">
 
                     <TextView
@@ -511,7 +520,7 @@
                 <TextView
                     android:id="@+id/beta_header"
                     android:focusable="true"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:drawableLeft="@drawable/ic_expand_more"
                     android:drawableStart="@drawable/ic_expand_more"
                     android:textSize="20sp"
@@ -522,7 +531,7 @@
 
                 <LinearLayout
                     android:id="@+id/beta_container"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
@@ -578,7 +587,7 @@
 
                             <Button
                                 android:id="@+id/beta_delete_button"
-                                android:visibility="gone"
+                                android:visibility="visible"
                                 android:text="@string/delete"
                                 android:layout_width="wrap_content"
                                 android:layout_height="wrap_content"/>
@@ -593,7 +602,7 @@
                     android:id="@+id/related_links"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:visibility="gone"
+                    android:visibility="visible"
                     android:orientation="vertical">
 
                 </LinearLayout>
@@ -608,7 +617,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="6dip"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
 
                 <TextView
                     android:id="@+id/to_play_store"
@@ -621,7 +630,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="6dip"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
 
                 <TextView
                     android:id="@+id/share"
@@ -646,7 +655,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingTop="6dip"
-                    android:visibility="gone" />
+                    android:visibility="visible" />
 
             </LinearLayout>
 
@@ -663,7 +672,7 @@
         android:paddingStart="4dp"
         android:paddingEnd="4dp"
         android:indeterminate="false"
-        android:visibility="gone"
+        android:visibility="visible"
         style="@android:style/Widget.ProgressBar.Horizontal" />
 
     <LinearLayout
@@ -678,7 +687,7 @@
             android:layout_height="48dp"
             android:contentDescription="@string/details_uninstall"
             android:scaleType="centerCrop"
-            android:visibility="gone"
+            android:visibility="visible"
             android:elevation="2dp"
             android:src="@drawable/ic_delete" />
 
@@ -687,7 +696,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="5"
-            android:visibility="gone"
+            android:visibility="visible"
             android:maxLines="1"
             android:text="@string/details_download" />
 
@@ -697,7 +706,7 @@
             android:layout_height="48dp"
             android:contentDescription="@string/content_description_cancel_download"
             android:scaleType="centerCrop"
-            android:visibility="gone"
+            android:visibility="visible"
             android:elevation="2dp"
             android:src="@drawable/ic_cancel" />
 
@@ -706,7 +715,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="5"
-            android:visibility="gone"
+            android:visibility="visible"
             android:maxLines="1"
             android:text="@string/details_install" />
 
@@ -715,7 +724,7 @@
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="3"
-            android:visibility="gone"
+            android:visibility="visible"
             android:maxLines="1"
             android:text="@string/details_run" />
 

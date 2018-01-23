@@ -23,6 +23,7 @@ import java.util.Set;
 abstract public class AppListActivity extends YalpStoreActivity {
 
     protected ListView listView;
+    protected String query;
     protected Map<String, ListItem> listItems = new HashMap<>();
 
     abstract public void loadApps();
@@ -113,9 +114,10 @@ abstract public class AppListActivity extends YalpStoreActivity {
         AppListAdapter adapter = (AppListAdapter) getListView().getAdapter();
         adapter.setNotifyOnChange(false);
         for (App app: appsToAdd) {
-            ListItem listItem = getListItem(app);
-            listItems.put(app.getPackageName(), listItem);
-            adapter.add(listItem);
+            Log.d("tag","list:"+app.getDisplayName()+" "+app.getPackageName());
+                 ListItem listItem = getListItem(app);
+                listItems.put(app.getPackageName(), listItem);
+                adapter.add(listItem);
         }
         if (update) {
             adapter.notifyDataSetChanged();

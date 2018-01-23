@@ -7,6 +7,8 @@ import android.util.Log;
 
 import com.github.yeriomin.yalpstore.fragment.FilterMenu;
 import com.github.yeriomin.yalpstore.task.playstore.ClusterTask;
+import com.github.yeriomin.yalpstore.task.playstore.DetailTask;
+import com.github.yeriomin.yalpstore.task.playstore.DetailsTask;
 
 public class ClusterActivity extends EndlessScrollActivity {
 
@@ -45,5 +47,10 @@ public class ClusterActivity extends EndlessScrollActivity {
         task.setFilter(new FilterMenu(this).getFilterPreferences());
         task.setClusterUrl(clusterUrl);
         return task;
+    }
+
+    @Override
+    protected DetailTask getDetailTask() {
+        return null;
     }
 }

@@ -1,11 +1,15 @@
 package com.github.yeriomin.yalpstore;
 
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.widget.TextView;
 
 import com.github.yeriomin.yalpstore.model.App;
+import com.github.yeriomin.yalpstore.task.playstore.DetailTask;
+import com.github.yeriomin.yalpstore.task.playstore.DetailsTask;
 import com.github.yeriomin.yalpstore.task.playstore.EndlessScrollTask;
+import com.github.yeriomin.yalpstore.task.playstore.SearchTask;
 import com.github.yeriomin.yalpstore.view.ListItem;
 import com.github.yeriomin.yalpstore.view.ProgressIndicator;
 import com.github.yeriomin.yalpstore.view.SearchResultAppBadge;
@@ -17,6 +21,7 @@ abstract public class EndlessScrollActivity extends AppListActivity {
     protected AppListIterator iterator;
 
     abstract protected EndlessScrollTask getTask();
+    abstract protected DetailTask getDetailTask();
 
     public void setIterator(AppListIterator iterator) {
         this.iterator = iterator;
@@ -65,16 +70,23 @@ abstract public class EndlessScrollActivity extends AppListActivity {
         iterator = null;
     }
 
-    protected EndlessScrollTask prepareTask(EndlessScrollTask task) {
+//    protected EndlessScrollTask prepareTask(EndlessScrollTask task) {
+//        task.setContext(this);
+//        task.setErrorView((TextView) getListView().getEmptyView());
+//        task.setProgressIndicator(findViewById(R.id.progress));
+//        return task;
+//    }
+    protected DetailTask prepareTask(DetailTask task) {
         task.setContext(this);
-        task.setErrorView((TextView) getListView().getEmptyView());
         task.setProgressIndicator(findViewById(R.id.progress));
         return task;
-    }
+}
 
     @Override
     public void loadApps() {
-        prepareTask(getTask()).execute();
+//        prepareTask(getTask()).execute();
+        Log.d("tag","loadApps");
+        prepareTask(getDetailTask()).execute();
     }
 
     @Override

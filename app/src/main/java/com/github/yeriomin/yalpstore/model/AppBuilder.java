@@ -2,6 +2,7 @@ package com.github.yeriomin.yalpstore.model;
 
 import android.text.TextUtils;
 
+import android.util.Log;
 import com.github.yeriomin.playstoreapi.AggregateRating;
 import com.github.yeriomin.playstoreapi.AppDetails;
 import com.github.yeriomin.playstoreapi.Dependency;
@@ -118,6 +119,10 @@ public class AppBuilder {
             } else if (image.getImageType() == IMAGE_SCREENSHOT) {
                 app.getScreenshotUrls().add(image.getImageUrl());
             }
+            else {
+                app.setBackgroundImage(image.getImageUrl());
+            }
+
         }
     }
 }
